@@ -89,15 +89,6 @@ function generateAppKey($config_file, $config_name) {
 	
 }
 
-if (!function_exists('view')) {
-
-	function view(string $template, array $data) {
-		echo View::template($template)->data($data)->render();
-		return;
-	}
-
-}
-
 if (!function_exists('pluck')) {
 	function pluck($array, $key, $default = null) {
 
@@ -126,3 +117,19 @@ if (!function_exists('route')) {
 	}
 }
 
+if ( !function_exists('view') ) {
+	
+	function view(string $view, array $data = []) {
+
+		$viewPath = dirname(__DIR__, 1) . '/views/';
+
+		if ( !strstr($view, '.php')) {
+			$view = "$view.php";
+		}
+
+		$view = $viewPath . $view;
+		View::get($view, $data);
+		View::clearCache();
+	}
+
+}

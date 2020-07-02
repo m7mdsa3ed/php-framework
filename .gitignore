@@ -1,6 +1,6 @@
 .DS_Store
 /vendor
-
+/app/cache
 # local env files
 config.env
 config.env.local

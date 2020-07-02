@@ -13,7 +13,7 @@ class Home extends Controller {
   
   public function index() {
     
-    echo "Index"  ;
+    return view('welcome');
   }
 
   public function stats() {
