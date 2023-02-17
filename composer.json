@@ -1,6 +1,6 @@
 {
     "require": {
-        "firebase/php-jwt": "^5.1",
+        "firebase/php-jwt": "^6.0",
         "fzaninotto/faker": "^1.9"
     }
 }
